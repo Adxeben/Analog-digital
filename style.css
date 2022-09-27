@@ -1,0 +1,139 @@
+html{
+    font-size: 62.5%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after{
+    margin:0;
+    padding:0;
+    -webkit-box-sizing: inherit;
+            box-sizing: inherit;
+}
+body{
+    background: rgb(22, 21, 21);
+}
+.wrapper{
+    display: flex;
+    justify-content: center;
+    transform: translateY(150px);
+}
+
+/* ----------analog clock ------------- */
+.analog__clock{
+    min-width:400px;
+    min-height:400px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    background:url('./pics/clock.png');
+    background-size: cover;
+    border:5px solid #ffff;
+    outline:5px solid #ff105e;
+    
+    -webkit-box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05);
+            box-shadow: 0 -15px 15px rgba(255, 255, 255, 0.05);
+    -webkit-box-shadow: inset 0 15px 15px rgba(0,0,0,0.3);
+            box-shadow: inset 0 15px 15px rgba(0,0,0,0.3);
+}
+@media only screen and (max-width:18.75em){
+    .analog__clock{
+        min-width:30rem;
+        min-height:30rem;
+    }
+}
+.analog__clock::before{
+    content:'';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #ffff;
+    border-radius: 50%;
+    z-index:10000;
+}
+.analog__clock, .time__hour,
+.analog__clock, .time__minute,
+.analog__clock, .time__second{
+    position: absolute;
+}
+
+.analog__clock, .time__hour, .time__hr{
+    width:160px;
+    height:160px;
+}
+.analog__clock, .time__minute, .time__min{
+    width:190px;
+    height:190px;
+}
+.analog__clock, .time__second, .time__sec{
+    width:230px;
+    height:230px;
+}
+.time__hr, .time__min, .time__sec{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    /* align-items: center; */
+    position: absolute;
+    border-radius: 50%;
+}
+.time__hr::before{
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 80px;
+    background: #ff105e;
+    z-index: 10;
+    border-radius: 6px 6px 0 0;
+}
+.time__min::before{
+    content: '';
+    position: absolute;
+    width: 4px;
+    height: 84px;
+    background: #ffff;
+    z-index: 11;
+    border-radius: 6px 6px 0 0;
+}
+.time__sec::before{
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 150px;
+    background: #ffff;
+    z-index: 11;
+    border-radius: 6px 6px 0 0;
+}
+
+
+
+/* ---------digital clock ---------- */
+.digital__clock{
+    font-family: Arial, Helvetica, sans-serif;
+    color:#ffff;
+    font-weight: bold;
+    font-size: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding:70px 0;
+    
+
+}
+.analog__clock, span{
+    padding-right: 7px;
+}
+#date{
+    padding-left:30px;
+}
